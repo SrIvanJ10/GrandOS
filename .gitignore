@@ -1,0 +1,16 @@
+# Ignore build artifacts
+.build/
+binary/
+binary.*
+cache/
+chroot/
+chroot.*
+
+# Ignore Generated images
+GrandOS*
+
+# Ignore local folder
+local/
+
+## Ignore Logs
+.log
