@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GrandOS UI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f0f1a;
+            color: #e0e0f0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #7b61ff, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            color: #8888aa;
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(123, 97, 255, 0.3);
+            border-radius: 16px;
+            padding: 2rem 3rem;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            color: #c0b8ff;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: #9090b0;
+            line-height: 1.6;
+        }
+
+        .status {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.4rem 1.2rem;
+            border-radius: 999px;
+            background: rgba(0, 212, 100, 0.15);
+            border: 1px solid rgba(0, 212, 100, 0.4);
+            color: #00d464;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        footer {
+            margin-top: 3rem;
+            color: #555577;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GrandOS</h1>
+        <p>Panel de control del sistema</p>
+    </header>
+
+    <div class="card">
+        <h2>Servidor Web Activo</h2>
+        <p>
+            Este servidor está corriendo con <strong>libmicrohttpd</strong> en C.
+            Puedes reemplazar este archivo <code>index.html</code> con tu interfaz real.
+        </p>
+        <span class="status">● En línea</span>
+    </div>
+
+    <footer>
+        &copy; 2026 GrandOS &mdash; Servidor C + libmicrohttpd
+    </footer>
+</body>
+</html>
