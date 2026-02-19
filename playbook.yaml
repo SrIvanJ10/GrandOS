@@ -4,6 +4,22 @@
    - name: Ping my hosts
      ansible.builtin.ping:
 
-   - name: Print message
-     ansible.builtin.debug:
-       msg: Hello world
+   - name: Create server directory
+     become: yes
+     ansible.builtin.file:
+       path: /server
+       state: directory
+       mode: '0755'
+       owner: grandos
+       group: grandos
+
+   - name: Send Server code
+     ansible.builtin.copy:
+      src: ui_server/
+      dest: /server/
+      backup: yes
+
+   - name: Update repositories and install/upgrade gcc compiler
+     ansible.builtin.apt:
+      name: gcc
+      update_cache: yes
