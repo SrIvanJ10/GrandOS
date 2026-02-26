@@ -2,3 +2,6 @@
 .vscode/
 
 *.out
+
+# CMake build directories
+ui_server/backend/build/
