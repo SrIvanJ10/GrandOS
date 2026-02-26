@@ -19,7 +19,13 @@
       dest: /server/
       backup: yes
 
-   - name: Update repositories and install/upgrade gcc compiler
+   - name: Install build dependencies
+     become: yes
      ansible.builtin.apt:
-      name: gcc
-      update_cache: yes
+       update_cache: yes
+       state: present
+       name:
+         - build-essential
+         - cmake
+         - pkg-config
+         - libwebsockets-dev
