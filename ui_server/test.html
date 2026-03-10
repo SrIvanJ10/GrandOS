@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Test</title>
+</head>
+<body>
+    <h1>WebSocket Test</h1>
+    <button onclick="connect()">Connect</button>
+    <button onclick="sendMessage()">Send Message</button>
+    <div id="log" style="border: 1px solid black; padding: 10px; height: 300px; overflow-y: auto;"></div>
+
+    <script>
+        let ws = null;
+
+        function log(msg) {
+            document.getElementById('log').innerHTML += msg + '<br>';
+            document.getElementById('log').scrollTop = document.getElementById('log').scrollHeight;
+        }
+
+        function connect() {
+            ws = new WebSocket("ws://localhost:8080");
+            ws.onopen = () => log("✅ Conectado");
+            ws.onmessage = (e) => log("📨 Recibido: " + e.data);
+            ws.onerror = () => log("❌ Error");
+            ws.onclose = () => log("❌ Desconectado");
+        }
+
+        function sendMessage() {
+            if (ws) ws.send("Hola desde navegador!");
+        }
+    </script>
+</body>
+</html>
