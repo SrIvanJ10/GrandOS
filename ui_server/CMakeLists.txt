@@ -10,8 +10,9 @@ find_package(Boost 1.70 REQUIRED COMPONENTS system)
 # Create the executable
 add_executable(ui_server 
     src/main.cpp
-    src/session.cpp
     src/server.cpp
+    src/session.cpp
+    src/login.cpp
 )
 
 # Link Boost libraries
